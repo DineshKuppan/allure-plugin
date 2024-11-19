@@ -54,6 +54,10 @@ class AllureReportPublisherContext implements Context {
         this.getPublisher().setDisabled(disabled);
     }
 
+    public void historyDisabled(final boolean disabled) {
+        this.getPublisher().setHistoryDisabled(disabled);
+    }
+
     public void commandline(final String commandline) {
         getPublisher().setCommandline(commandline);
     }
