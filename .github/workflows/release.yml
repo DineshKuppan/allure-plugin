@@ -14,7 +14,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
           cache: 'maven'
-          server-id: maven.jenkins-ci.org
+          server-id: github
           server-username: JENKINS_USERNAME
           server-password: JENKINS_TOKEN
       - run: |
@@ -23,3 +23,4 @@ jobs:
         env:
           JENKINS_USERNAME: ${{ secrets.JENKINS_USERNAME }}
           JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

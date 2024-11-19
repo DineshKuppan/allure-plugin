@@ -9,13 +9,25 @@
         <relativePath />
     </parent>
 
-    <groupId>ru.yandex.qatools.allure</groupId>
+    <groupId>com.bytes2gram.qatools.allure</groupId>
     <artifactId>allure-jenkins-plugin</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>hpi</packaging>
 
     <name>Allure Jenkins Plugin</name>
     <url>https://github.com/jenkinsci/allure-plugin</url>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Github</name>
+            <url>https://maven.pkg.github.com/dineshkuppan/allure-plugin</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/dineshkuppan/allure-plugin</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <properties>
         <revision>2.31.0.11</revision>
