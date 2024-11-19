@@ -96,6 +96,8 @@ public class AllureReportPublisher extends Recorder implements SimpleBuildStep, 
 
     private Boolean includeProperties;
 
+    private Boolean historyDisabled;
+
     private Boolean disabled;
 
     private String report;
@@ -119,6 +121,15 @@ public class AllureReportPublisher extends Recorder implements SimpleBuildStep, 
     @DataBoundSetter
     public void setDisabled(final boolean disabled) {
         this.disabled = disabled;
+    }
+
+    public boolean isHistoryDisabled() {
+        return this.historyDisabled == null ? Boolean.FALSE : this.historyDisabled;
+    }
+
+    @DataBoundSetter
+    public void setHistoryDisabled(final boolean historyDisabled) {
+        this.historyDisabled = historyDisabled;
     }
 
     @DataBoundSetter
@@ -419,7 +430,9 @@ public class AllureReportPublisher extends Recorder implements SimpleBuildStep, 
                                 final @NonNull FilePath workspace,
                                 final @NonNull TaskListener listener)
             throws IOException, InterruptedException {
-        addHistory(resultsPaths, run, workspace, listener);
+        if (!isHistoryDisabled()) {
+            addHistory(resultsPaths, run, workspace, listener);
+        }
         addTestRunInfo(resultsPaths, run);
         addExecutorInfo(resultsPaths, run);
     }
