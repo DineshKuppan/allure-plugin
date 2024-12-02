@@ -432,9 +432,9 @@ public class AllureReportPublisher extends Recorder implements SimpleBuildStep, 
             throws IOException, InterruptedException {
         if (!isHistoryDisabled()) {
             addHistory(resultsPaths, run, workspace, listener);
+            addTestRunInfo(resultsPaths, run);
+            addExecutorInfo(resultsPaths, run);
         }
-        addTestRunInfo(resultsPaths, run);
-        addExecutorInfo(resultsPaths, run);
     }
 
     @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
