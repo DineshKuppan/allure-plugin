@@ -30,7 +30,7 @@
     </distributionManagement>
 
     <properties>
-        <revision>2.31.0.11</revision>
+        <revision>2.31.0.12</revision>
         <changelist>-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/allure-plugin</gitHubRepo>
         <jenkins.version>2.387.3</jenkins.version>
